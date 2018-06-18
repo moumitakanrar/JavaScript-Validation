@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <title>Form Validation</title>
+      
+      <script type="text/javascript">
+      
+            // Form validation code will come here.
+            function validate(){
+                var userName = document.getElementById("user_name");
+                var emailID = document.getElementById("email_id");
+                var zip = document.getElementById("zip");
+                var country = document.getElementById("country");
+                if(userName.value==""){
+                     alert( "Please provide your name!" );
+                     userName.focus();
+                     return false;
+                }
+                else if(emailID.value==""){
+                     alert( "Please provide your email id!" );
+                     emailID.focus();
+                     return false;
+                }
+                else if(zip.value==""){
+                     alert( "Please provide your Zip Code!" );
+                     zip.focus();
+                     return false;
+                }
+                else if(country.value==""){
+                     alert( "Please provide your country!" );
+                     country.focus();
+                     return false;
+                }
+                return true;
+            }
+      
+      </script>
+      
+   </head>
+   
+   <body>
+      <form action="test.php" name="myForm" onsubmit="return(validate());">
+         <table cellspacing="2" cellpadding="2" border="1">
+            
+            <tr>
+               <td align="right">Name</td>
+               <td><input type="text" name="Name" id="user_name"/></td>
+            </tr>
+            
+            <tr>
+               <td align="right">EMail</td>
+               <td><input type="email" name="EMail" id="email_id"/></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Zip Code</td>
+               <td><input type="number" name="Zip" id="zip"/></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Country</td>
+               <td>
+                  <select  name="Country" id="country">
+                     <option value="" disabled selected hidden>[choose yours]</option>
+                     <option value="USA">USA</option>
+                     <option value="UK">UK</option>
+                     <option value="INDIA">INDIA</option>
+                  </select>
+               </td>
+            </tr>
+            
+            <tr>
+               <td align="right"></td>
+               <td><input type="submit" value="Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>
+      
+   </body>
+</html>
